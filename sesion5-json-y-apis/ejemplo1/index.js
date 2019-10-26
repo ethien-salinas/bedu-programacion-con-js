@@ -6,11 +6,11 @@ const areaPaises = document.getElementById("mostrarpaises")
 
 const buscarPaises = () => {
     const resultado = fetch('https://restcountries.eu/rest/v2/all')
-    .then(response => response.json())
-    .then(datos => {
-        console.log(datos)
-        datos.map(pais => {
-            areaPaises.innerHTML += `
+        .then(response => response.json())
+        .then(datos => {
+            console.log(datos)
+            datos.map(pais => {
+                areaPaises.innerHTML += `
             <div>
                 <img class="bandera" src="${pais.flag}" style="width: 30px">
                 <h1>${pais.name}</h1>
@@ -28,14 +28,14 @@ const buscarPaises = () => {
                         <p>${border}</p>
                         `
                     }
-            ) }</p>
+                    )}</p>
                 <p>
 
                 </p>
             </div>
-            ` 
+            `
+            })
         })
-    })
 }
 
 // 3. EVENTOS
